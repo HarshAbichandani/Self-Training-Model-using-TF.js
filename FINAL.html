@@ -1,0 +1,55 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/cyborg/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"> </script>
+<script src="webcam.js"></script>
+<script src="rps-dataset.js"></script>
+</head>
+<body>
+	<div>
+		<div>
+			<video autoplay playsinline muted id="wc" width="224" height="224"></video>
+		</div>
+	</div>
+
+	<!-- <h1>TENSORFLOW.js SELF TRAINING BROWSER BASED MODEL </h1> -->
+	<div class="card text-white bg-info mb-3" style="max-width: 20rem;">
+	  <div class="card-header">Using Tensorflow.js</div>
+	  <div class="card-body">
+	    <h4 class="card-title">SELF TRAINING MODEL</h4>
+	    <p class="card-text">Rock , Paper , Scissors , Spider , Lizard</p>
+	  </div>
+	</div>
+
+
+
+	<button type="button" class="btn btn-outline-primary" id="0" onclick="handleButton(this)" >Rock</button>
+	<button type="button" class="btn btn-outline-success" id="1" onclick="handleButton(this)" >Paper</button>
+	<button type="button" class="btn btn-outline-info" id="2" onclick="handleButton(this)" >Scissors</button>
+	<button type="button" class="btn btn-outline-warning" id="3" onclick="handleButton(this)" >Spider</button>
+	<button type="button" class="btn btn-outline-danger" id="4" onclick="handleButton(this)" >Lizard</button>
+	<div id="rocksamples">Rock Samples:</div>
+	<div id="papersamples">Paper Samples:</div>
+	<div id="scissorssamples">Scissors Samples:</div>
+	<div id="spocksamples">Spock Samples:</div>
+	<div id="lizardsamples">Lizard Samples:</div>
+	<button type="button"class="btn btn-outline-primary" id="train" onclick="doTraining()" >Train Network</button>
+	<div id="dummy">Once training is complete, click 'Start Predicting' to see predictions, and 'Stop Predicting' to end. Once you are happy with your model, click 'Download Model' to save the model to your local disk.</div>
+	<button type="button" class="btn btn-outline-success" id="startPredicting" onclick="startPredicting()" >Start Predicting</button>
+	<button type="button" class="btn btn-outline-danger" id="stopPredicting" onclick="stopPredicting()" >Stop Predicting</button>
+    <button type="button" class="btn btn-outline-warning" id="saveModel" onclick="saveModel()" >Download Model</button>
+	<div id="prediction"></div>
+    <p></p>
+	<!-- <h2>BY:- HARSH JAIRAJ ABICHANDANI</h2> -->
+	<div class="card text-white bg-warning mb-3" style="max-width: 20rem;">
+	  <div class="card-header">Browser Based Deployment</div>
+	  <div class="card-body">
+	    <h4 class="card-title">By:- HARSH ABICHANDANI</h4>
+	    <p class="card-text">Have Fun Playing Rock , Paper , Scissors , Spider , Lizard</p>
+	  </div>
+	</div>
+
+</body>
+
+<script src="index.js"></script>
+</html>
